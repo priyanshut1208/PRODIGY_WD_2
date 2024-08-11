@@ -1,0 +1,211 @@
+/* Basic Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Ensure the body takes up the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; /* Background color for fallback */
+}
+
+/* Image Container */
+.image-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+.image-container.active {
+    opacity: 1; /* Show active image */
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Center Content */
+.content {
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Set a maximum width for content */
+    padding: 20px;
+}
+
+/* Welcome Container */
+.welcome-container {
+    color: white;
+    text-align: center;
+}
+
+.mode-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.mode-button:hover {
+    transform: scale(1.1);
+}
+
+/* Game Container */
+.game-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative; /* Added for positioning the difficulty level */
+}
+
+.status {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.restart-button,
+.back-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.restart-button:hover,
+.back-button:hover {
+    transform: scale(1.1);
+}
+
+/* AI Difficulty Dropdown */
+#aiSettings {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#aiDifficulty {
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Transitions for Page Switch */
+.fade {
+    transition: opacity 0.5s ease;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+/* Scorecard */
+.scorecard {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.scorecard h2 {
+    margin-bottom: 20px;
+}
+
+.score-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between scores */
+}
+
+#scoreX,
+#scoreO {
+    font-size: 24px;
+}
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Space above the button container */
+}
+
+.restart-button,
+.back-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.restart-button:hover,
+.back-button:hover {
+    transform: scale(1.1);
+}
